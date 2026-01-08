@@ -3,11 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Custom Dummy 13 Builder</title>
-
-<!-- Three.js for 3D model -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/loaders/GLTFLoader.js"></script>
-
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,21 +10,21 @@
 <h1>Customize Your Dummy 13</h1>
 
 <div class="builder">
-
   <h2>Base Price: $20</h2>
 
   <h3>Add-ons</h3>
-  <label><input type="checkbox" value="5" class="addon"> Tentacles (+$5)</label><br>
+  <label><input type="checkbox" value="10" class="addon"> Tentacles (+$10)</label><br>
   <label><input type="checkbox" value="3" class="addon"> Extra Arms (+$3)</label><br>
   <label><input type="checkbox" value="7" class="addon"> Armor Plates (+$7)</label><br>
-  <label><input type="checkbox" value="10" class="addon"> Wings (+$10)</label><br>
+  <label><input type="checkbox" value="5" class="addon"> Wings (+$5)</label><br>
 
+  <h3>Color</h3>
   <select id="color">
-  <option value="white">White</option>
-  <option value="black">Black</option>
-  <option value="red">Red</option>
-  <option value="blue">Blue</option>
-</select>
+    <option value="White">White</option>
+    <option value="Black">Black</option>
+    <option value="Red">Red</option>
+    <option value="Blue">Blue</option>
+  </select>
 
   <h3>Shipping</h3>
   <label><input type="checkbox" id="shipping"> USA Shipping (+$8)</label><br>
@@ -39,17 +34,18 @@
 
   <h2>Total: $<span id="total">20</span></h2>
 
-  <a href="https://forms.gle/P8ERtavPqHanbewS8" target="_blank">
+  <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">
     <button>Submit Order</button>
   </a>
-
 </div>
 
-<h2>3D Preview</h2>
-<div id="preview" style="width: 400px; height: 400px; border: 1px solid #ccc;"></div>
+<h2>Gallery</h2>
+<div class="gallery">
+  <img src="https://i.imgur.com/YhQxJ0y.png" alt="Dummy 13 1">
+  <img src="https://i.imgur.com/7Ew1pXa.png" alt="Dummy 13 2">
+  <img src="https://i.imgur.com/6j2SxT6.png" alt="Dummy 13 3">
+</div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
