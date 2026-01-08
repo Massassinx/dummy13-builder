@@ -1,50 +1,18 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #fff; /* white background */
-  color: #333;
-  padding: 20px;
+// PRICE CALCULATOR
+const basePrice = 20;
+const addons = document.querySelectorAll('.addon');
+const totalDisplay = document.getElementById('total');
+const shipping = document.getElementById('shipping');
+
+function updatePrice() {
+    let total = basePrice;
+    addons.forEach(addon => {
+        if (addon.checked) total += parseInt(addon.value);
+    });
+    if (shipping.checked) total += 8;
+    totalDisplay.textContent = total;
 }
 
-h1, h2, h3 {
-  text-align: center;
-}
-
-.builder {
-  background: #f5f5f5;
-  padding: 20px;
-  max-width: 400px;
-  margin: 0 auto 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-button {
-  background: #00aaff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 10px;
-  color: white;
-  border-radius: 5px;
-}
-
-textarea {
-  width: 100%;
-  height: 50px;
-  margin-bottom: 10px;
-  padding: 5px;
-}
-
-.gallery {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.gallery img {
-  width: 150px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
+// Event listeners
+addons.forEach(addon => addon.addEventListener('change', updatePrice));
+shipping.addEventListener('change', updatePrice);
